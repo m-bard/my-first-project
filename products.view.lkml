@@ -35,6 +35,7 @@ view: products {
   dimension: retail_price {
     type: number
     sql: ${TABLE}.retail_price ;;
+    value_format_name: usd
   }
 
   dimension: sku {
