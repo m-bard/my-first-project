@@ -38,6 +38,20 @@ view: order_items {
     sql: ${TABLE}.sale_price ;;
   }
 
+  dimension: price_range {
+    case: {
+      when: {
+        sql: ${sale_price} < 25 ;;
+        label: "Inexpensive"
+      }
+      when: {
+        sql: ${sale_price} >= 25 AND ${sale_price} < 75 ;;
+        label: "Moderate"
+      }
+      else: "Expensive"
+    }
+  }
+
   measure: count {
     type: count
     drill_fields: [id, orders.id, inventory_items.id]

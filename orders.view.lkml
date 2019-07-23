@@ -26,6 +26,11 @@ view: orders {
     sql: ${TABLE}.status ;;
   }
 
+  dimension: is_order_complete {
+    type: yesno
+    sql: ${status} = 'complete' ;;
+  }
+
   dimension: user_id {
     type: number
     # hidden: yes
@@ -35,5 +40,11 @@ view: orders {
   measure: count {
     type: count
     drill_fields: [id, users.first_name, users.id, users.last_name, order_items.count]
+  }
+
+  measure: order_price {
+    type: sum
+    sql: ${order_items.sale_price] ;;
+    value_format_name: usd
   }
 }
