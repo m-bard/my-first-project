@@ -63,4 +63,10 @@ view: order_items {
     sql: ${sale_price} ;;
     value_format_name: usd
   }
+
+  measure: highest_price {
+    type: max
+    sql: ${sale_price} ;;
+    value_format_name: usd
+  }
 }
