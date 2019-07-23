@@ -44,7 +44,7 @@ view: orders {
 
   measure: order_price {
     type: sum
-    sql: ${order_items.sale_price] ;;
+    sql: ${order_items.sale_price} ;;
     value_format_name: usd
   }
 }
