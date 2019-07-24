@@ -15,7 +15,7 @@ explore: connection_reg_r3 {}
 explore: derived_test_table_3_20190510 {}
 
 explore: events {
-  sql_always_where: ${value} NOT NULL ;;
+  sql_always_where: ${value} -NULL ;;
   join: users {
     type: left_outer
     sql_on: ${events.user_id} = ${users.id} ;;
