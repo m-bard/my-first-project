@@ -15,10 +15,12 @@ explore: connection_reg_r3 {}
 explore: derived_test_table_3_20190510 {}
 
 explore: events {
+  sql_always_where: ${value} NOT NULL ;;
   join: users {
     type: left_outer
     sql_on: ${events.user_id} = ${users.id} ;;
     relationship: many_to_one
+    fields: [users.id, users.age, users.city, users.count, users.country]
   }
 }
 
@@ -69,6 +71,7 @@ explore: products {}
 explore: schema_migrations {}
 
 explore: user_data {
+  fields: [ALL_FIELDS*, -users.age_tier]
   join: users {
     type: left_outer
     sql_on: ${user_data.user_id} = ${users.id} ;;
@@ -76,7 +79,14 @@ explore: user_data {
   }
 }
 
-explore: users {}
+explore: users {
+  always_filter: {
+    filters: {
+      field: state
+      value: "California"
+    }
+  }
+}
 
 explore: users_nn {}
 
