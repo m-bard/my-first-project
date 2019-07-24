@@ -69,4 +69,10 @@ view: order_items {
     sql: ${sale_price} ;;
     value_format_name: usd
   }
+
+  measure: median_price {
+    type: median
+    sql: ${sale_price} ;;
+    value_format_name: usd
+  }
 }

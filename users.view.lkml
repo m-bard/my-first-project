@@ -74,6 +74,11 @@ view: users {
     sql: ${TABLE}.zip ;;
   }
 
+  dimension: full_name {
+    type: string
+    sql: CONCAT(${first_name},' ',${last_name}) ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [detail*]

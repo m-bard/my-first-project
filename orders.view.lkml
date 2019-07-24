@@ -41,4 +41,12 @@ view: orders {
     type: count
     drill_fields: [id, users.first_name, users.id, users.last_name, order_items.count]
   }
+
+  measure: completed_count {
+    type: count
+    filters: {
+      field: is_order_complete
+      value: "yes"
+    }
+  }
 }

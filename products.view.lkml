@@ -39,6 +39,8 @@ view: products {
   }
 
   dimension: sku {
+    label: "Stock Keeping Unit"
+    description: "A machine-readable bar code, most often seen printed on product labels, that lets vendors expeditiously scan and track the movement of inventory"
     type: string
     sql: ${TABLE}.sku ;;
   }
