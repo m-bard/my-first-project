@@ -82,6 +82,22 @@ view: users {
   measure: average_age {
     type: average
     sql:  ${age} ;;
+    value_format_name: decimal_2
+  }
+
+  measure: highest_age {
+    type: max
+    sql: ${age} ;;
+  }
+
+  measure: lowest_age {
+    type: min
+    sql: ${age} ;;
+  }
+
+  measure: age_span {
+    type: number
+    sql: ${highest_age} - ${lowest_age} ;;
   }
 
   # ----- Sets of fields for drilling ------
