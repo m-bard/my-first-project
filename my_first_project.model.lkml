@@ -15,7 +15,6 @@ explore: connection_reg_r3 {}
 explore: derived_test_table_3_20190510 {}
 
 explore: events {
-  sql_always_where: ${value} -NULL ;;
   join: users {
     type: left_outer
     sql_on: ${events.user_id} = ${users.id} ;;
@@ -25,6 +24,7 @@ explore: events {
 }
 
 explore: inventory_items {
+  sql_always_where: ${cost} > 0 ;;
   join: products {
     type: left_outer
     sql_on: ${inventory_items.product_id} = ${products.id} ;;
@@ -71,6 +71,7 @@ explore: products {}
 explore: schema_migrations {}
 
 explore: user_data {
+  view_label: "Users Order Data"
   fields: [ALL_FIELDS*, -users.age_tier]
   join: users {
     type: left_outer
