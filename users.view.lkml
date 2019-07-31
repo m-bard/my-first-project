@@ -47,6 +47,10 @@ view: users {
   dimension: email {
     type: string
     sql: ${TABLE}.email ;;
+    link: {
+      label: "Agent Lookup"
+      url: "http://www.google.com/search?q={{value}}"
+    }
   }
 
   dimension: first_name {
