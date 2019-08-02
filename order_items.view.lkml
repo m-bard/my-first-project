@@ -58,12 +58,12 @@ view: order_items {
     sql: ${price_range} ;;
     html:
       {% if value == "Inexpensive"}
-        <p style="color: green">{{ value }}</p>
+        <font color="green">{{ value }}</font>
       {% elsif value == "Moderate"}
-        <p style="color: yellow">{{ value }}</p>
+        <font color="yellow">{{ value }}</font>
       {% else %}
-        <p style="color: red">{{ value }}</p>
-      {% endif %};;
+        <font color="yellow">{{ value }}</font>
+      {% endif %} ;;
   }
 
   measure: count {
