@@ -57,12 +57,12 @@ view: order_items {
     type: string
     sql: ${price_range} ;;
     html:
-      {% if value == "Inexpensive"}
-        <p style="color: green">{{ rendered_value }}</p>
-      {% elsif value == "Moderate"}
-        <p style="color: yellow">{{ rendered_value }}</p>
+      {% if value == "Inexpensive" %}
+        <p style="color: green">{{ value }}</p>
+      {% elsif value == "Moderate" %}
+        <p style="color: yellow">{{ value }}</p>
       {% else %}
-        <p style="color: red">{{ rendered_value }}</p>
+        <p style="color: red">{{ value }}</p>
       {% endif %} ;;
   }
 
