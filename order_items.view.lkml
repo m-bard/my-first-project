@@ -55,7 +55,7 @@ view: order_items {
 
   dimension: price_range_color_coded {
     type: string
-    sql: price_range ;;
+    sql: ${price_range} ;;
     html:
       {% if value = "Inexpensive"}
         <p style="color: green">{{ value }}</p>
