@@ -53,6 +53,19 @@ view: order_items {
     }
   }
 
+  dimension: price_range_color_coded {
+    type: string
+    sql: price_range ;;
+    html:
+      {% if value = "Inexpensive"}
+        <p style="color: green">{{ value }}</p>
+      {% elsif value = "Moderate"}
+        <p style="color: yellow">{{ value }}</p>
+      {% else %}
+        <p style="color: red">{{ value }}</p>
+      {% endif %};;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, orders.id, inventory_items.id]
