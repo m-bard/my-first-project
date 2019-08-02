@@ -60,7 +60,7 @@ view: order_items {
       {% if value == "Inexpensive" %}
         <p style="color: green">{{ value }}</p>
       {% elsif value == "Moderate" %}
-        <p style="color: yellow">{{ value }}</p>
+        <p style="color: orange">{{ value }}</p>
       {% else %}
         <p style="color: red">{{ value }}</p>
       {% endif %} ;;
