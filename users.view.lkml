@@ -93,6 +93,7 @@ view: users {
   measure: highest_age {
     type: max
     sql: ${age} ;;
+    html: <b>{{rendered_value}}</b> ;;
   }
 
   measure: lowest_age {

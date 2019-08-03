@@ -58,11 +58,11 @@ view: order_items {
     sql: ${price_range} ;;
     html:
       {% if value == "Inexpensive" %}
-        <p style="color: green">{{ value }}</p>
+        <p style="color: green">{{value}}</p>
       {% elsif value == "Moderate" %}
-        <p style="color: orange">{{ value }}</p>
+        <p style="color: orange">{{value}}</p>
       {% else %}
-        <p style="color: red">{{ value }}</p>
+        <p style="color: red">{{value}}</p>
       {% endif %} ;;
   }
 
