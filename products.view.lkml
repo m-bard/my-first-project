@@ -9,7 +9,7 @@ view: products {
 
   dimension: brand {
     type: string
-    sql: ${TABLE}.brand ;;
+    sql: CONCAT(${TABLE}.brand, 'TEST') ;;
   }
 
   dimension: category {
