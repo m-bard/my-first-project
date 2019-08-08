@@ -9,7 +9,7 @@ view: products {
 
   dimension: brand {
     type: string
-    sql: CONCAT(${TABLE}.brand, '_A_LONG_STRING_WITH_NO_SPACES') ;;
+    sql: ${TABLE}.brand ;;
   }
 
   dimension: category {
