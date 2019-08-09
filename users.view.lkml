@@ -84,6 +84,14 @@ view: users {
     drill_fields: [detail*]
   }
 
+  measure: count_over_21 {
+    type: count
+    filters: {
+      field: age
+      value: ">21"
+    }
+  }
+
   measure: average_age {
     type: average
     sql:  ${age} ;;
