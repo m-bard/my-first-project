@@ -53,6 +53,11 @@ view: order_items {
     }
   }
 
+  dimension: testing {
+    type: string
+    sql: {{ order_items.price_range._value }} ;;
+  }
+
   dimension: price_range_color_coded {
     type: string
     sql: ${price_range} ;;
