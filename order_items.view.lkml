@@ -68,7 +68,7 @@ view: order_items {
 
   measure: count_greater_than_five {
     type: string
-    sql: CASE WHEN ${count} > 5 THEN "Greater than 5"
+    sql: CASE WHEN ${count} > 5 AND ${price_range} = "Moderate" THEN "Greater than 5"
     ELSE "Less than 5"
     END ;;
   }
