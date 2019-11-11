@@ -66,13 +66,6 @@ view: order_items {
       {% endif %} ;;
   }
 
-  measure: count_greater_than_five {
-    type: string
-    sql: CASE WHEN ${count} > 5 AND ${price_range} = "Moderate" THEN "Greater than 5"
-    ELSE "Less than 5"
-    END ;;
-  }
-
   measure: count {
     type: count
     drill_fields: [id, orders.id, inventory_items.id]
